@@ -1,0 +1,144 @@
+{% extends 'post.html' %}
+
+{%block title%} {{post1.title}} | {{block.super}} {%endblock%}
+
+{% block content %}
+
+<h3>{{post1.title}}</h3>
+<small>post created by: {{post1.author}}</small>
+<hr>
+<p>{{post1.body}}</p>
+
+<div class="row gallery">
+{% comment %} <p>andar hain row gallery ke</p> {% endcomment %}
+{% for p in post1.images_set.all %}
+{% comment %} <p>for ke andar</p> {% endcomment %}
+<img src="{{p.image.url}}" alt="image not found" class="img-thumbnail">
+{% endfor %}
+</div>
+
+
+{% comment %} {{total_likes}} like{{ total_likes|pluralize }}<br> {% endcomment %}
+
+{% comment %} {% if request.user.is_authenticated %}
+    <form action="{% url 'post_like' %}" method="post">
+        {% csrf_token %}
+        {% if is_liked %}
+        <button type="submit" name="post_id" value="{{ post1.id }}" class="btn btn-danger">DISLIke</button>
+        {% else %}
+        <button type="submit" name="post_id" value="{{ post1.id }}" class="btn btn-primary">LIke</button>
+        {% endif %}
+    </form> 
+    
+{% else %}
+    <small>if you want to like this, first log in</small>
+{% endif %} {% endcomment %}
+
+<div id="like-section">
+    {% include 'post_like.html' %}
+</div>
+
+<div id="favourite-section">
+{% if is_favourite %}
+    
+        <a href="{% url 'post_favourite' id=post1.id %}"><i class="fas fa-heart fa-lg"></i></a>
+    
+{% else %}
+    
+        <a href="{% url 'post_favourite' id=post1.id %}"><i class="far fa-heart fa-lg"></i></a>
+    
+{% endif %}
+</div>
+
+{% if post1.author == request.user %}
+<div class="section-1" style="float:right">
+<a href="{% url 'edit_post' id=post1.id %}">
+<button type="button" class="btn btn-outline-success">
+Edit
+</button>
+</a>
+
+<a href="{% url 'post_delete' id=post1.id %}" id = "delete">
+<button type="button" class="btn btn-danger">
+DELETE
+</button>
+</a>
+
+</div>
+{% endif %}
+
+<br><br>
+<hr>
+
+
+
+
+
+
+{% if not post1.restrict_comment %}
+{{comments.count}} Comment{{comments|pluralize}}
+<div class="main-comment-section">
+
+        <div class="container-fluid mt-2">
+            <div class="form-group row">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ comment_form.as_p }}
+                    {% if request.user.is_authenticated %}
+                    <input type="submit" value="submit" class="btn btn-outline-success">
+                    {% else %}
+                    <input type="submit" value="submit" class="btn btn-outline-success" disabled>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+
+
+    {% for comment in comments %}
+        <blockquote class="blockquote">
+        <p class="mb-0">{{ comment.content }}</p>
+        <footer class="blockquote-footer">by <cite title="Source Title">{{ comment.user|capfirst}}</cite>
+            
+            <button type="button" name="button" class="reply-btn btn btn-outline-dark btn-sm ml-2">replies</button>
+
+        </footer>
+        </blockquote>
+
+        <div class="replied-comments container mt-2" style="display:none;">
+
+
+            {% for reply in comment.replies.all %}
+                <blockquote class="blockquote">
+                <p class="mb-0">{{ reply.content }}</p>
+                <footer class="blockquote-footer">by <cite title="Source Title">{{ reply.user|capfirst}}</cite></footer>
+                </blockquote>
+            {% endfor %}
+
+
+
+            <div class="form-group row">
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                    {{ comment_form.as_p }}
+                    {% if request.user.is_authenticated %}
+                    <input type="submit" value="submit" class="btn btn-outline-success">
+                    {% else %}
+                    <input type="submit" value="submit" class="btn btn-outline-success" disabled>
+                    {% endif %}
+                </form>
+
+            </div>
+        </div>
+
+    {% endfor %}
+</div>
+{% endif %}
+
+
+
+
+
+
+{% endblock %}

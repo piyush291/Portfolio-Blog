@@ -1,0 +1,200 @@
+{% load static %}
+{% static "images" as "baseUrl"%}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	<title>SAIC</title>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+	<link rel="stylesheet" href="{% static 'css/saic.css' %}">
+
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+          <!-- Brand -->
+          <a class="navbar-brand" href="project1.html">
+            <img src="{% static 'img/first1.jpg' %}" alt="logo" style="width:40px;">
+          </a>
+
+          <!-- Links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="academics.html">ACADEMICS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">PROJECTS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">CONTACT ME</a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Co-Curriculum
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="saic.html">SAIC</a>
+                <a class="dropdown-item" href="modelling.html">MODELLING</a>
+                <a class="dropdown-item" href="sports.html">OTHERS</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+  
+  <div class="wrapper">
+    
+    <img src="{% static 'img/saic.jfif' %}">
+
+    <section>
+      <div>
+        <strong>
+          Student Alumni Interaction Cell (SAIC) is an institute body run by the students of TIET, under the guidance of Thapar University Alumni Association (TUAA) & Dean of Student Affairs (DoSA), devoted towards the enhancement of relations between the students and alumni community. 
+ 
+       SAIC acts as a collaborative and symbiotic linkage between TIET and its Alumni. The organization functions with a vision to develop a dynamic student-alumni community committed to establishing connections and strengthening ties between students and alumni, facilitating TIET’s mission of providing top quality education and opportunities for investing in its future.
+        </strong>
+        <br><br><br>
+      </div>
+    </section>
+  </div>
+
+   <h2 class="roles">MY ROLES</h2>
+   <br>
+
+
+
+   <section class="add">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Troubleshoot</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">GLS</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Exordium</button>
+  <button class="tablinks" onclick="openCity(event, 'TheConnect')">TheConnect</button>
+  <button class="tablinks" onclick="openCity(event, 'GJ')">Golden Jubilee</button>
+</div>
+
+
+<div id="London" class="tabcontent">
+  <a href=""><img src="{% static 'img/trobleshoot.jpg' %}" align="middle"></a>
+  <p class="center">(Team Member)</p>
+  <p>Troubleshoot, as we infer by the name itself that troubleshooting the real world problems will be the prime focus of this event</p>
+  <p>want to read the rulebook click <a href="https://tinyurl.com/rulebooksaic">here</a></p>
+</div>
+
+  
+
+<div id="Paris" class="tabcontent">
+  <br>
+  <a href="https://www.facebook.com/events/360778271205146/"><h3>GLOBAL LEADERSHIP SUMMIT</h3></a>
+  <p class="center">(Team Member)</p>
+  <p>In this event we create a virtual environment where each team is representing a country and they have to make some deals by negotiating with other teams and earn the maximum profit.</p>
+  <p>want to read the rulebook click <a href="http://bit.ly/Rulebook_Day1">here</a></p> 
+</div>
+
+
+<div id="Tokyo" class="tabcontent">
+  <br>
+  <h3>EXORDIUM</h3>
+  <p class="center">(Event Coordinator)</p>
+  <p>It is an informal event organised by our team for the freshers, where we called our alumni "Rahul Dua" and make their eve unforgettable.</p>
+</div>
+
+<div id="TheConnect" class="tabcontent">
+  <br>
+  <h3>TheConnect</h3>
+  <p class="center">(Content Writer)</p>
+  <p>It is an informal event organised by our team for the freshers, where we called our alumni "Rahul Dua" and make their eve unforgettable.</p>
+</div>
+
+<div id="GJ" class="tabcontent">
+  <br>
+  <h3>GOLDEN JUBILEE</h3>
+  <p class="center">(Organising Member)</p>
+  <p>It is an informal event organised by our team for the freshers, where we called our alumni "Rahul Dua" and make their eve unforgettable.</p>
+</div>
+
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+</section>
+
+
+<h3 class="line">MY MEMORIES</h3>
+<br><br>
+
+
+
+<div class="bas">
+
+    {% comment %} {% for obj in objs %}
+    <img class="pics" src="{{baseUrl}}/{{obj.img}}">
+    {% endfor %} {% endcomment %}
+
+    {% for obj in objs %}
+    <img class="pics" src="{{obj.img.url}}">
+    {% endfor %}
+
+    {% comment %} <img class="pics" src="{{baseUrl}}/{{obj1.img}}">       this was used while trying to insert images dynamically using objects {% endcomment %}
+
+    <img class="pics" src="{% static 'img/1.jpg' %}" alt="Forest">
+    <img class="pics" src="{% static 'img/2.jpg' %}" alt="Snow" >
+    <img class="pics" src="{% static 'img/5.jpg' %}" alt="" >
+    <img class="pics" src="{% static 'img/1.jpg' %}" alt="F">
+    <img class="pics" src="{% static 'img/team.jpg' %}" >
+    
+</div>
+
+<br><br>
+
+
+      <section>
+      
+      <a href="#" class="facebook"><img src="{% static 'img/fblogo.png' %}"></a>
+      <a href="#" class="twitter"><img src="{% static 'img/twitter.jfif' %}"></a>
+      <a href="#" class="linkedin"><img src="{% static 'img/linkedin.jfif' %}"></a>
+      <a href="#" class="instagram"><img src="{% static 'img/instagram.jfif' %}"></a>
+
+     
+
+      </section>
+
+       <br><br>
+       <footer>
+      <p>ek bhot achi quote</p>
+    </footer>
+
+
+</body>
+</html>

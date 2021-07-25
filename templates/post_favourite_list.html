@@ -1,0 +1,25 @@
+{% extends 'post.html' %}
+{% block content %}
+
+
+        <div class="row">
+            {% for post in favourite_post %}
+            <div class="col-md-6">
+                <div class="img-thumbnail">
+                    <a href="{{post.get_absolute_url}}">{{post.title}}</a>
+                     {% comment %} <a href="{% url 'post_details' post.id %}">{{post.title}}</a>  {% endcomment %}
+                    <small style="float:right">{{post.created}}</small>
+                    Author: {{post.author}} <br>
+                    {{post.body}}
+                
+                </div>
+                <br>
+            </div>
+            {% empty %}
+                <h3>no post found </h3>
+            {% endfor %}
+        </div>
+
+
+
+{% endblock %}

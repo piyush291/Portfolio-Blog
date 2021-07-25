@@ -1,0 +1,305 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hobbies</title>
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style>
+		.head{
+			padding-top:55px;
+		}
+		.head img{
+		
+			width: 100%;
+			height:500px;
+		}
+		.head section{
+			text-align: center;
+			font-style: arial;
+		}
+		.sports .cricket{
+			position: relative;
+			text-align: center;
+			height:400px;
+			float: left;
+			width: 50%;
+		}
+		.sports img{
+			/*opacity: 0.6;*/
+			filter: grayscale(100%);
+		}
+		.centered1{
+			color: white;
+  			position: absolute;
+			top: 10%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+			.centered2{
+			color: white;
+  			position: absolute;
+			top: 20%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.sports .chess{
+			position: relative;
+			text-align: center;
+			height: 400px;
+			float: right;
+			width: 50%;
+		}
+
+		.read{
+			width: 1000px;
+			margin: 0 auto;
+		}
+
+		.books{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+		}
+
+		.content{
+			padding-top: 10px; 
+		}
+
+		.content p{
+			text-align: center;
+		}
+
+		.content img{
+			padding: 10px;
+			max-width: 300px;
+			height: 500px;
+		}
+		.gyming img{
+			transition-delay: 1s;
+		}
+
+		.maintain .gyming{
+			position: relative;
+  			max-width: 800px;
+  			margin: 0 auto;
+		}
+
+		.maintain .gyming img {
+			vertical-align: middle;
+			max-width: 800px;
+		}
+
+		.maintain .gyming p{
+			
+  			position: absolute;
+  			bottom: 0;
+  			background: rgb(0, 0, 0); /* Fallback color */
+  			background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  			color: #f1f1f1;
+  			width: 100%;
+  			padding: 20px;
+		}
+
+		.maintain{
+			margin-top: 30px;
+			width: 90%;
+			margin: 0  auto;
+			text-align: center;
+		}
+
+		.maintain h3{
+			font-size: 40px;
+			text-transform: uppercase;
+		}
+		.maintain .main{
+			padding-top: 40px;
+			display: flex;
+			justify-content: space-evenly;
+		}
+
+		.maintain .main img{
+			width: 369px;
+			height: 478px;
+		}
+
+		/*.maintain .gyming{
+			border: 1px solid black;
+			text-align: center;
+			float: left;
+			width: 50%;
+			overflow: hidden;
+		}
+
+		.maintain .gyming img{
+			width: 450px;
+			height: 438px;
+		}
+
+		.maintain .beard{
+			border: 1px solid black;
+			float: right;
+			width: 50%;
+		}*/
+
+		footer{
+	  /*position: fixed;*/
+	  left: 0;
+	  bottom: 0;
+	  width: 100%;
+	  height: 50px;
+	  background-color: grey;
+	  color: white;
+	  text-align: center;
+}
+
+	</style>
+</head>
+<body style="height: 100%;">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!-- sports-cricket chess, reading , maintaining myself-gym hairstyle attires -->
+
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+          <!-- Brand -->
+          <a class="navbar-brand" href="project1.html">
+            <img src="{% static 'img/first1.jpg' %}" alt="logo" style="width:40px;">
+          </a>
+
+          <!-- Links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="academics.html">ACADEMICS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">PROJECTS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">CONTACT ME</a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Co-Curriculum
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="saic.html">SAIC</a>
+                <a class="dropdown-item" href="modelling.html">MODELLING</a>
+                <a class="dropdown-item" href="sports.html">SPORTS</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="head">
+        	<img src="{% static 'img/hobby.jpg' %}">
+        	<section>
+        	<i>Find three hobbies:<br>One to make you money <br>One to keep you in shape <br>And one to be creative</i>
+            </section>
+        </div>
+
+        
+
+        <div class="sports" style="height: 600px;">
+        	<br><br><br><br>
+
+        	<h3 style="text-align: center;">SPORTS</h3>
+        	<br>
+        	
+        	<section class="cricket" >
+        			<img src="{% static 'img/kohli.jpg' %}" style="width: 70%; background-repeat: no-repeat;">
+        			<h4 class="centered1"><b>CRICKET</b></h4>
+        			<p class="centered2">here description of cricket wll be given</p>
+        	</section>
+
+        	<section class="chess">
+        		<img src="{% static 'img/chess.jpeg' %}" style="width: 70%; height: 390px; background-repeat: no-repeat;">
+        		<h4 class="centered1"><b>CHESS</b></h4>
+        		<p class="centered2">here description of chess wll be given</p>
+        	</section>
+
+        </div>
+
+
+        <section class="read">
+        	<h3 style="text-align: center;">READING</h3>
+        	<div class="books">
+
+        		<div class="content">
+        			<img src="{% static 'img/power.jpg' %}">
+        			<p> desc</p>
+        		</div>
+
+        		<div class="content">
+        			<img src="{% static 'img/subtle_art.png' %}">
+        			<p> desc</p>
+        		</div>
+
+        		<div class="content">
+        			<img src="{% static 'img/rdpd.jpg' %}">
+        			<p> desc</p>
+        		</div>
+
+        		<div class="content">
+        			<img src="{% static 'img/wish.jpg' %}">
+        			<p> desc</p>
+        		</div>
+
+        		<div class="content">
+        			<img src="{% static 'img/winner.jpg' %}">
+        			<p> desc</p>
+        		</div>
+
+        		<div class="content">
+        			<img src="{% static 'img/monk.jpg' %}">
+        			<p> desc</p>
+        		</div>
+
+        		<div class="content">
+        			<img src="{% static 'img/power_now.jpg' %}">
+        			<p> desc</p>
+        		</div>
+
+        	</div>
+        </section>
+
+        <section class="maintain">
+        	<br><br><br><br>
+        	<h3>looks</h3>
+        	<br><br>
+
+        	<div class="gyming">
+        		<img src="{% static 'img/gym.jpeg' %}">
+        		<p>hello everyone</p>
+        	</div>
+
+        	<div class="main">
+
+        		<div class="beard">
+        		<img src="{% static 'img/beard.png' %}">
+        		<p>this is me</p>
+	        	</div>
+
+	        	<div class="beard">
+	        		<img src="{% static 'img/beard.png' %}">
+	        		<p>this is me</p>
+	        	</div>
+
+	        	<div class="beard">
+	        		<img src="{% static 'img/mgn.jfif' %}">
+	        		<p>this is me</p>
+	        	</div>
+	        </div>
+	        	
+        	
+        </section>
+
+    <footer>
+      <p>ek bhot achi quote</p>
+    </footer>
+</body>
+</html>

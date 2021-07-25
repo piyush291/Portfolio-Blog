@@ -1,0 +1,16 @@
+{% extends 'post.html' %}
+
+{% block content %}
+
+<form method ="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ post_form.as_p }}
+    {{ formset.management_form }}
+    {% for f in formset %}
+        {{ f.as_p }}
+    {% endfor %} 
+    {% comment %} {{ Profile_form.as_p }} {% endcomment %}
+    <input type="submit" value="update" class="btn btn-outline-success">
+</form>
+
+{% endblock %}

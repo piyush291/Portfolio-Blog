@@ -1,0 +1,21 @@
+ {% extends 'post.html' %}
+ {% block content %}
+
+    <form method="post" enctype="multipart/form-data">
+    	{% csrf_token %}
+        {{ form.as_p }}
+        {{ formset.as_table }}
+
+        {% comment %} <input type="text" name="title" placeholder="title"><br>
+        <input type="text" name="body" placeholder="body"><br>
+        <input type="radio" name="status" value="published">
+        <label >published</label>
+
+        <input type="radio" name="status" value="draft">
+        <label>draft</label>
+        <br> {% endcomment %}
+        <input type="submit" value="Create" class="btn btn-outline-success"> 
+
+    </form>
+    
+ {% endblock %}

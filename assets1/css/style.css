@@ -1,0 +1,189 @@
+
+
+/*my cod estarts here*/
+
+
+/*p{
+	background-color: blue;
+}
+
+
+h3{
+	background-color: green;
+}
+
+
+div h4{
+	background-color: yellow;
+}
+
+.index-h5{
+	background-color: violet;
+}
+
+.index-intro p{
+	color: green;
+}
+
+#heya{
+	color: yellow;
+}*/
+
+
+
+
+
+/*@font-face{
+	src: url(fonts/teko/Teko-Medium.ttf);
+	font-family: Teko;
+}
+
+body{
+	background-color: #eee;
+}
+
+h1{
+	font-family: arial,"Times New Roman";
+	font-size: 22;
+	font-style: inherit;
+	font-weight: 200;
+	text-align: left;
+	text-decoration: underline;
+	text-indent: 50px;
+	text-transform: capitalize;
+}
+p{
+	font-family: Teko;
+}
+
+ul {
+	margin-left: 70px;
+
+}
+ul li{
+	list-style: none;
+	display: inline-block;
+
+}
+ul li a{
+	text-decoration: none;
+	color: grey;
+	padding: 20px;
+}
+ul li a:hover {
+	color: red;
+}
+nav{
+	width: 100%;
+	background-color: yellow;
+}
+.wrapper{
+	margin: 0 auto;
+	width: 80%;
+}
+
+.first-img{
+	width: 300px;
+}
+
+.first1-img{
+	width: 300px;
+	height: 200px;
+	/* background-size: cover; */
+/*	background-image: url("img/first1.jpg");
+}
+.first1-img:hover{
+	background-size: 100%;
+}
+.videowrapper{
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0px;
+}
+.videowrapper iframe{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	height: 100%;
+	width: 100%;
+}*/
+
+body{
+	height: 1250px;
+}
+
+.wrapper{
+	width: 1000px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+h1{
+	padding-top: 20px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/*.icon-bar{
+	padding-left: 40px;
+}*/
+
+/*.icon-bar p i{
+	width: 10px;
+}*/
+
+.icon-bar strong{
+	padding-left: 20px;
+}
+
+section{
+	padding-left: 40px;
+}
+
+section .facebook img {
+		  max-width: 30px;
+		  max-height: 30px;
+		  background: #3B5998;
+		  color: white;
+		}
+
+section .twitter img{
+			 max-width: 30px;
+		  max-height: 30px;
+		  background: #55ACEE;
+		  color: white;
+		}
+
+section	.linkedin img {
+		 max-width: 30px;
+		  max-height: 30px;
+		  background: #007bb5;
+		  color: white;
+		}
+
+section .instagram img{
+			max-width: 30px;
+		  max-height: 30px;
+		  background: #125688;
+		  color: white;
+		}
+
+footer{
+	  position: fixed;
+	  left: 0;
+	  bottom: 0;
+	  width: 100%;
+	  height: 50px;
+	  background-color: grey;
+	  color: white;
+	  text-align: center;
+}
+
+.comment{
+	width: 70%;
+	margin: 0 auto;
+	text-align: center;
+}

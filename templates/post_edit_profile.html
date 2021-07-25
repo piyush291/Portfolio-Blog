@@ -1,0 +1,10 @@
+{% extends 'post.html' %}
+ {% block content %}
+
+<form method ="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    {{ Profile_form.as_p }}
+    <input type="submit" value="submit changes" class="btn btn-outline-success">
+    </form>
+ {% endblock %}
