@@ -25,7 +25,11 @@ SECRET_KEY = 'ehe7j7r62n3h37zc488@8^tef*@m1a952r)_@@+98cdn)8bdbh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'piyush-portfolio-dbepe5gxbjfsgsdj.southeastasia-01.azurewebsites.net'
+]
 
 
 # Application definition
